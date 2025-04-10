@@ -100,6 +100,10 @@ public class ChangeIccPinScreen extends Activity {
             mDisallowedConfig = true;
         }
 
+        getWindow().addSystemFlags(
+                android.view.WindowManager.LayoutParams
+                        .SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS);
+
         mPhone = PhoneGlobals.getPhone();
 
         resolveIntent();

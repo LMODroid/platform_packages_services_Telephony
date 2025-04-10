@@ -73,6 +73,10 @@ public class EnableIccPinScreen extends Activity {
             mDisallowedConfig = true;
         }
 
+        getWindow().addSystemFlags(
+                android.view.WindowManager.LayoutParams
+                        .SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS);
+
         setContentView(R.layout.enable_sim_pin_screen);
         setupView();
 
