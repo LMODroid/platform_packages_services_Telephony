@@ -12854,6 +12854,7 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
     public String getModemService() {
         String result;
         Log.d(LOG_TAG, "getModemService");
+        TelephonyPermissions.enforceShellOnly(Binder.getCallingUid(), "getModemService");
         TelephonyPermissions
                 .enforceCallingOrSelfReadPrivilegedPhoneStatePermissionOrCarrierPrivilege(
                         mApp, SubscriptionManager.INVALID_SUBSCRIPTION_ID,
